@@ -12,3 +12,7 @@
     - Wallet model is defined
     - One to many relationship from User to Wallet is defined in model/User.java
     - Many to one relationship from wallets to a single user is defined in model/Wallet.java
+
+3. resources/application.properties contains h2 db configurations
+
+4. Starting point for project(main function) is main/java/wf/proj_user_wallets/YourProjectApplication.java
