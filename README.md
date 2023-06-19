@@ -16,3 +16,14 @@
 3. resources/application.properties contains h2 db configurations
 
 4. Starting point for project(main function) is main/java/wf/proj_user_wallets/YourProjectApplication.java
+
+5. Fault Toerance : 
+    - add Resilience4j dependencies to application.properties
+    - import in userServiceImpl.java `import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
+`
+    - add a `CircuitBreaker` annotation above each service `    @CircuitBreaker(name = "getAllUsers", fallbackMethod = "getAllUsersFallback")
+`
+    - add a Fall back method for the same `    public List<UserDto> getAllUsersFallback(Exception e) { }
+`
+6. Api gateway using ngincx:
+    - Every thing is in nginx/ folder
